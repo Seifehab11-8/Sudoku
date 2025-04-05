@@ -78,6 +78,14 @@ bool SudokuGenerator::remove_to_level(SudokuBoard &sudokuBoard, int numOfRemoves
     while(numOfRemoves != 0) {
         row = dist(g);
         col = dist(g);
+        SudokuBoard temp = sudokuBoard;
+        temp.undoCell(row, col);
+        if(SudokuSolver::solve(temp)) {
+            if(temp.getCell(row, col) == solved_board.at(row).at(col)) {
+                sudokuBoard.undoCell(row, col);
+                numOfRemoves--;
+            }
+        }
     }
-    return false;
+    return true;
 }
