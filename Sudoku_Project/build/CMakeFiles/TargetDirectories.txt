@@ -1,0 +1,3 @@
+C:/Users/semaz/OneDrive/Documents/Software_Development/Sudoku/Sudoku_Project/build/CMakeFiles/Sudoku.dir
+C:/Users/semaz/OneDrive/Documents/Software_Development/Sudoku/Sudoku_Project/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/semaz/OneDrive/Documents/Software_Development/Sudoku/Sudoku_Project/build/CMakeFiles/ZERO_CHECK.dir

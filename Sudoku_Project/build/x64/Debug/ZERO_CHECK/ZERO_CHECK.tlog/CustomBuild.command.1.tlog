@@ -1,0 +1,10 @@
+^C:\USERS\SEMAZ\ONEDRIVE\DOCUMENTS\SOFTWARE_DEVELOPMENT\SUDOKU\SUDOKU_PROJECT\BUILD\CMAKEFILES\619D1ABE12D44F61C9EB03C62E0E04F9\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/semaz/OneDrive/Documents/Software_Development/Sudoku/Sudoku_Project -BC:/Users/semaz/OneDrive/Documents/Software_Development/Sudoku/Sudoku_Project/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/semaz/OneDrive/Documents/Software_Development/Sudoku/Sudoku_Project/build/Sudoku_Project.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

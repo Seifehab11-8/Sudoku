@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuSolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuBoard.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuGame.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuSolver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\src\SudokuGenerator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Sudoku\Sudoku_Project\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D5D27FF4-F00D-370B-953B-875810078F80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{45D8CB63-95D4-32DF-9098-C4D2D0A27C48}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
