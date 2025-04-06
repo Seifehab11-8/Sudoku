@@ -80,6 +80,15 @@ void SudokuGenerator::print_soln() const
     }
 }
 
+void SudokuGenerator::erase_all()
+{
+    for(auto &row: solved_board) {
+        for(auto &cell: row) {
+            cell = 0;
+        }
+    }
+}
+
 bool SudokuGenerator::remove_to_level(SudokuBoard &sudokuBoard, int numOfRemoves)
 {
     std::vector<int> vec = {0, 1, 2, 3, 4, 5, 6, 7, 8};

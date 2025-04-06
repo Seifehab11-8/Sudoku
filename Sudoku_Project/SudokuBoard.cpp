@@ -194,14 +194,26 @@ bool SudokuBoard::validateBoard()
     return true;
 }
 
+bool SudokuBoard::is_solved()
+{
+    for(auto vec: board) {
+        for(auto cell: vec) {
+            if(cell == 0) return false;
+        }
+    }
+    return true;
+}
+
 void SudokuBoard::print() const
 {
     int col_separator = 0;
+    std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "---------------------";
     std::cout << std::endl;
-    for(auto board_row : board) {
+    for(const auto &board_row : board) {
         int row_separator = 0;
-        for(auto cell : board_row) {
+        for(const auto &cell : board_row) {
             if((row_separator) % 3 == 0 && row_separator != 0) {
                 std::cout << "| ";
             }

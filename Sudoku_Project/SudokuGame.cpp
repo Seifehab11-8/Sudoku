@@ -48,18 +48,30 @@ bool SudokuGame::gameMenu()
             case 1:
                 if(enterMove()) {
                     std::cout<<"Move accepted!"<<std::endl;
+                    if(sudokuBoard.is_solved()) {
+                        sudokuBoard.print();
+                        std::cout<<"Great job! The Sudoku is solved!"<<std::endl;
+                        return true;
+                    }
                 }
                 else {
                     std::cout<<"Invalid move. That cell might be occupied or the placement breaks Sudoku rules."<<std::endl;
                 }
                 break;
             case 2:
-                SudokuSolver::solve(sudokuBoard);
-                sudokuBoard.print();
-                std::cout<<"Great job! The Sudoku is solved!"<<std::endl;
+                if(SudokuSolver::solve(sudokuBoard)){
+                    sudokuBoard.print();
+                    std::cout<<"Great job! The Sudoku is solved!"<<std::endl;
+                }
+                else {
+                    std::cout<<"These board cannot be solved!!!"<<std::endl;
+                }
                 return true;
             case 3:
                 if(load()) {
+                    sudokuGenerator.erase_all(); 
+                    // to go to load file mode and ensure generator logic doesn't 
+                    //interfere with it
                     std::cout<<"Board is loaded successfully."<<std::endl;
                 }
                 else {
@@ -89,13 +101,17 @@ bool SudokuGame::enterMove()
     int row = 0, col = 0, value = 0;
     std::cout<<"Enter row (1-9), column (1-9), and value (1-9): ";
     std::cin>>row>>col>>value;
-    return sudokuBoard.setCell(row, col, value);
+    if(value != sudokuGenerator.getCell(row - 1, col - 1) && sudokuGenerator.getCell(row - 1, col - 1)!= 0) {
+        return false;
+    }
+    return sudokuBoard.setCell(row - 1, col - 1, value);
 }
 
 bool SudokuGame::load()
 {
     std::string path;
     std::cout<<"Enter File Path: ";
+    getchar();
     getline(std::cin, path);
     return sudokuBoard.loadPuzzle(path);
 }
@@ -104,6 +120,7 @@ bool SudokuGame::save()
 {
     std::string path;
     std::cout<<"Enter File Path: ";
+    getchar();
     getline(std::cin, path);
     return sudokuBoard.savePuzzle(path);
 }
@@ -120,6 +137,7 @@ void SudokuGame::start()
         while(gameMenu() == 0) {
             std::cout<<"No Option Choosen try again"<<std::endl;
         }
+        sudokuGenerator.erase_all(); 
         std::cout<<"Do you want to Play Again (yes(y) / no(n)): ";
         std::cin>>option;
         if(option == 'n') {

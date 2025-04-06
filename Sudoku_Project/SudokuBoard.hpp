@@ -21,6 +21,7 @@ class SudokuBoard {
     bool loadPuzzle(const std::string path);
     bool savePuzzle(const std::string path)const;
     bool validateBoard();
+    bool is_solved();
     void print() const;
 };
 #endif // !SUDOKU_BOARD
