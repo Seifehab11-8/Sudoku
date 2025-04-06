@@ -97,9 +97,10 @@ void SudokuBoard::erase_all()
     }
 }
 
-void SudokuBoard::loadPuzzle(const std::string path)
+bool SudokuBoard::loadPuzzle(const std::string path)
 {
     std::ifstream ifs;
+    bool successflag = false;
     try {
         ifs.exceptions(std::ifstream::failbit | std::ifstream::badbit);
         ifs.open(path);
@@ -121,15 +122,18 @@ void SudokuBoard::loadPuzzle(const std::string path)
                 temp_str_index++;
             }
         }
+        successflag = true;
     }catch (const std::ios_base::failure &e) {
         std::cerr << e.what();
     } 
     ifs.close();
+    return successflag;
 }
 
-void SudokuBoard::savePuzzle(const std::string path) const
+bool SudokuBoard::savePuzzle(const std::string path) const
 {
     std::ofstream ofs;
+    bool successflag = false;
     try {
         ofs.exceptions(std::ifstream::failbit | std::ifstream::badbit);
         ofs.open(path);
@@ -143,10 +147,12 @@ void SudokuBoard::savePuzzle(const std::string path) const
             }
         }
         ofs << temp_str; // puzzle is saved to file to track progress
+        successflag = true;
     }catch (const std::ios_base::failure &e) {
         std::cerr << e.what();
     } 
     ofs.close();
+    return successflag;
 }
 
 bool SudokuBoard::validateBoard()
@@ -191,6 +197,8 @@ bool SudokuBoard::validateBoard()
 void SudokuBoard::print() const
 {
     int col_separator = 0;
+    std::cout << "---------------------";
+    std::cout << std::endl;
     for(auto board_row : board) {
         int row_separator = 0;
         for(auto cell : board_row) {
@@ -213,4 +221,7 @@ void SudokuBoard::print() const
             std::cout << std::endl;
         }
     }
+    std::cout << "---------------------";
+    std::cout << std::endl;
+    std::cout << std::endl;
 }

@@ -3,6 +3,7 @@
 #include <algorithm> // Required for std::shuffle
 #include <vector>
 #include <random>
+#include <iostream>
 
 bool SudokuGenerator::back_track_generate(SudokuBoard &sudokuBoard, int row, int col)
 {
@@ -63,7 +64,20 @@ bool SudokuGenerator::generate(SudokuBoard &sudokuBoard, std::string level)
     else if(level.compare("hard") == 0) {
         remove_to_level(sudokuBoard, HARD);
     }
+    else {
+        std::cout<<"ERROR in Generation"<<std::endl;
+    }
     return true;
+}
+
+void SudokuGenerator::print_soln() const
+{
+    for(auto row: solved_board) {
+        for(auto cell: row) {
+            std::cout<<cell;
+        }
+        std::cout<<std::endl;
+    }
 }
 
 bool SudokuGenerator::remove_to_level(SudokuBoard &sudokuBoard, int numOfRemoves)
@@ -79,6 +93,7 @@ bool SudokuGenerator::remove_to_level(SudokuBoard &sudokuBoard, int numOfRemoves
         row = dist(g);
         col = dist(g);
         SudokuBoard temp = sudokuBoard;
+        if(sudokuBoard.getCell(row, col) == 0) continue;
         temp.undoCell(row, col);
         if(SudokuSolver::solve(temp)) {
             if(temp.getCell(row, col) == solved_board.at(row).at(col)) {

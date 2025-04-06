@@ -18,8 +18,8 @@ class SudokuBoard {
     int getCell(int row, int col)const;
     void undoCell(int row, int col);
     void erase_all();
-    void loadPuzzle(const std::string path);
-    void savePuzzle(const std::string path)const;
+    bool loadPuzzle(const std::string path);
+    bool savePuzzle(const std::string path)const;
     bool validateBoard();
     void print() const;
 };

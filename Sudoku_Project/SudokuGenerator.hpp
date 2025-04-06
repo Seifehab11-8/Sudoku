@@ -15,6 +15,7 @@ class SudokuGenerator {
     SudokuGenerator();
     int getCell(int row , int col)const;
     bool generate(SudokuBoard &sudokuBoard, std::string level);
+    void print_soln() const;
 };
 
 #endif // !SUDOKU_GENERATOR
