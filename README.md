@@ -1,50 +1,43 @@
 # Sudoku Game
 
-A C++ implementation of a Sudoku game that allows users to play, solve, and manage Sudoku puzzles. The project includes features for generating puzzles, solving them automatically, and saving/loading puzzles from files.
+A C++ implementation of a Sudoku game with puzzle generation, solving, and interactive gameplay features.
 
 ## Features
 
-- **Start Menu**:
-  - Retrieve a game from a file.
-  - Generate a new Sudoku puzzle with difficulty levels: `easy`, `medium`, or `hard`.
+- Interactive command-line interface
+- Multiple difficulty levels (Easy, Medium, Hard)
+- Puzzle generation with unique solutions
+- Automatic puzzle solver
+- Save/Load game progress
+- Manual move entry with validation
+- Board state validation
 
-- **Game Menu**:
-  - Enter a move manually.
-  - Solve the puzzle automatically using a Sudoku solver.
-  - Load a puzzle from a file.
-  - Save the current puzzle to a file.
-  - Exit the game.
+## Game Modes
 
-- **Persistence**:
-  - Save and load puzzles to/from files for later use.
+1. **Load from File**: Load an existing Sudoku puzzle from a file
+2. **Auto Generation**: Generate a new puzzle with selected difficulty
+   - Easy: 32 empty cells
+   - Medium: 46 empty cells
+   - Hard: 52 empty cells
 
-## How to Run
+## Gameplay Options
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/<your-username>/Sudoku.git
-   cd Sudoku/Sudoku_Project
-   g++ -o SudokuGame SudokuGame.cpp SudokuBoard.cpp SudokuGenerator.cpp SudokuSolver.cpp
-   ./SudokuGame
-   Sudoku_Project/
-├── [SudokuGame.cpp](http://_vscodecontentref_/0)        # Main game logic
-├── [SudokuBoard.cpp](http://_vscodecontentref_/1)       # Handles the Sudoku board
-├── [SudokuGenerator.cpp](http://_vscodecontentref_/2)   # Generates Sudoku puzzles
-├── [SudokuSolver.cpp](http://_vscodecontentref_/3)      # Solves Sudoku puzzles
-├── [SudokuGame.hpp](http://_vscodecontentref_/4)        # Header for game logic
-├── [SudokuBoard.hpp](http://_vscodecontentref_/5)       # Header for board logic
-├── [SudokuGenerator.hpp](http://_vscodecontentref_/6)   # Header for puzzle generation
-├── [SudokuSolver.hpp](http://_vscodecontentref_/7)      # Header for puzzle solving
-1) Retrieve game from file
-2) Generate a game automatically
-Choice: 2
-Enter Game Difficulty 'easy', 'medium', 'hard': easy
-==============================================
-1) Enter a move
-2) Solve automatically
-3) Load puzzle from file
-4) Save current puzzle to file
-5) Exit
-Choice: 1
-Enter row (1-9), column (1-9), and value (1-9): 4 5 7
-Move accepted!
+- Enter moves manually
+- Auto-solve the current puzzle
+- Save current game state
+- Load saved game
+- Exit game
+
+## Class Structure
+
+- **SudokuBoard**: Handles the game board state and operations
+- **SudokuGenerator**: Generates new valid Sudoku puzzles
+- **SudokuSolver**: Implements solving algorithm
+- **SudokuGame**: Manages game flow and user interaction
+
+## Building the Project
+
+To compile the project:
+
+```bash
+g++ -std=c++11      -o sudoku
